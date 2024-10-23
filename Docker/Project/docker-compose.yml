@@ -10,7 +10,7 @@ services:
         build:
             context: ./
             dockerfile: Dockerfile
-        image: "docker.io/priyac579/simple_blog_api"
+        image: "docker.io/pshiri/simple_blog_api"
         environment:
             - POSTGRES_HOST=postgres
             - POSTGRES_PORT=5432
