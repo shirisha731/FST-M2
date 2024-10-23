@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: docker.io/priyac579/simple_blog_api
+          image: docker.io/pshiri/simple_blog_api
           ports:
             - containerPort: 3000
           resources:
