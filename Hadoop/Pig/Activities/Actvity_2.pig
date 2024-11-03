@@ -9,4 +9,4 @@ cntd = FOREACH grpd GENERATE $0, COUNT($1) AS WordCount;
 -- delete the output folder
 rmf hdfs:///user/pshirisha/Pigresults;
 -- Store the result in HDFS
-STORE cntd INTO 'hdfs:///user/AKS/Pigresults';
+STORE cntd INTO 'hdfs:///user/pshirisha/Pigresults';
