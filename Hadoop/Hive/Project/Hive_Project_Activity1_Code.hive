@@ -1,0 +1,35 @@
+drop table Conversation;
+drop table Dialogue_Count_By_Char;
+CREATE TABLE Conversation (Name STRING,Dialogues STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+LOAD DATA LOCAL INPATH '/root/episodeIV_dialogues.txt' INTO TABLE Conversation;
+LOAD DATA LOCAL INPATH '/root/episodeV_dialogues.txt' INTO TABLE Conversation;
+LOAD DATA LOCAL INPATH '/root/episodeVI_dialogues.txt' INTO TABLE Conversation;
+CREATE TABLE Dialogue_Count_By_Char AS SELECT Name,No_Of_Dialogues FROM(SELECT Name,COUNT(1) as No_Of_Dialogues FROM Conversation GROUP BY Name)w ORDER by No_Of_Dialogues DESC;
+INSERT OVERWRITE DIRECTORY 'hdfs:////user/Project_Activity/Activity_2' ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' SELECT * FROM Dialogue_Count_By_Char;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
