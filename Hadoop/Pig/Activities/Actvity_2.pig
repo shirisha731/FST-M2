@@ -1,5 +1,5 @@
 -- Load input file from HDFS
-inputFile = LOAD 'hdfs:///user/AKS/pigText.txt' AS (line);
+inputFile = LOAD 'hdfs:///user/pshirisha/pigText.txt' AS (line);
 -- Tokeize each word in the file (Map)
 words = FOREACH inputFile GENERATE FLATTEN(TOKENIZE(line)) AS word;
 -- Combine the words from the above stage
