@@ -1,0 +1,22 @@
+# Set base image
+FROM docker.io/node:18-alpine
+
+# Create a working directory
+WORKDIR /usr/app
+# mkdir /usr/app
+# cd /usr/app
+
+#copy package.json
+COPY ./package.json ./
+
+# Run command to install redis
+RUN npm install
+
+	
+# COPY rest Files
+COPY ./ ./
+
+# Command to run the reddis server	
+CMD ["npm", "start"]
+
+#CMD ["Command", "option", "argument"]
